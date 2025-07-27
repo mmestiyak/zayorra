@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Zayorra: Bringing the World’s Finest Beauty to Bangladesh
+    </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Zayorra brings authentic, internationally sourced luxury beauty and skincare to Bangladesh, thoughtfully curated for those who value timeless excellence."
+    />
+    <meta
+      name="keywords"
+      content="premium beauty Bangladesh, authentic international brands, finest beauty products, exclusive beauty BD, authentic skincare, Korean cosmetics, UK beauty products, premium cosmetics BD, L'Oréal Bangladesh, Neutrogena BD, Zayorra"
+    />
+    <meta name="author" content="Zayorra" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <link rel="canonical" href="https://zayorra.com" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zayorra",
+        "url": "https://zayorra.com",
+        "logo": "https://zayorra.com/zayorra.png",
+        "description": "Zayorra brings authentic, internationally sourced luxury beauty and skincare to Bangladesh, thoughtfully curated for those who value timeless excellence.",
+        "sameAs": ["https://facebook.com/zayorra"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "contact@zayorra.com"
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "Zayorra",
+          "description": "International luxury beauty and skincare brand outsourced to Bangladesh"
+        }
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+        background-image: radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 255, 255, 0.8) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.6) 0%,
+            transparent 50%
+          ),
+          linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .content {
+        max-width: 64rem;
+        margin: 0 auto;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease-out;
+      }
+
+      .content.loaded {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+              .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #666;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            text-align: center;
+        }
+        
+        .loading-monogram {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: block;
+            opacity: 0.8;
+        }
+
+      .loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .logo-container {
+        margin-bottom: 1.5rem;
+      }
+
+      .logo {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .tagline {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        color: #666;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        padding: 0 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .tagline:hover {
+        color: #d4af37;
+      }
+
+      .divider {
+        width: 6rem;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #d4af37 50%,
+          transparent 100%
+        );
+        margin: 0 auto 2.5rem auto;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .divider:hover {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        transform: scaleX(1.1);
+      }
+
+      .coming-soon {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: #1a1a1a;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+      }
+
+      .description {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: #4a4a4a;
+        margin-bottom: 3rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+        padding: 0 1rem;
+      }
+
+      .description em {
+        font-style: italic;
+        color: #666;
+        font-size: 0.85rem;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+        width: 100%;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        font-weight: 400;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 300px;
+        min-height: 48px;
+        white-space: nowrap;
+      }
+      
+      .btn-text-mobile {
+        display: inline;
+      }
+      
+      .btn-text-desktop {
+        display: none;
+      }
+
+      .btn-primary {
+        background-color: #1a1a1a;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary:hover {
+        background-color: #000;
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: #1a1a1a;
+        border: 1px solid #1a1a1a;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .btn-outline:hover {
+        background-color: #1a1a1a;
+        color: white;
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+      }
+
+      .under-construction {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+      }
+
+      .under-construction p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: #888;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 0;
+        right: 0;
+        padding: 0 1rem;
+      }
+
+              .footer p {
+            text-align: center;
+            color: #999;
+            font-weight: 300;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-monogram {
+            width: 25px;
+            height: 25px;
+            margin: 0 auto 0.75rem auto;
+            display: block;
+            opacity: 0.4;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+
+      .btn:hover .icon {
+        transform: scale(1.1);
+      }
+
+      /* Facebook icon */
+      .facebook-icon {
+        fill: currentColor;
+      }
+
+      /* Mail icon */
+      .mail-icon {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* Responsive design - Mobile First */
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 2rem;
+        }
+
+        .logo {
+          max-width: 450px;
+        }
+
+        .coming-soon {
+          font-size: 2.2rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+
+        .btn {
+          padding: 1.1rem 2.2rem;
+          font-size: 0.78rem;
+          min-height: 52px;
+        }
+        
+        .btn-text-mobile {
+          display: none;
+        }
+        
+        .btn-text-desktop {
+          display: inline;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding: 0 2.5rem;
+        }
+
+        .contact-links {
+          flex-direction: row;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .btn {
+          width: auto;
+          max-width: none;
+          min-width: 200px;
+        }
+
+        .coming-soon {
+          font-size: 2.8rem;
+        }
+
+        .description {
+          font-size: 1.1rem;
+        }
+
+        .tagline {
+          font-size: 0.7rem;
+        }
+
+        .divider {
+          width: 7rem;
+        }
+        
+        .btn-text-mobile {
+          display: none;
+        }
+        
+        .btn-text-desktop {
+          display: inline;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          padding: 0 3rem;
+        }
+
+        .coming-soon {
+          font-size: 3.2rem;
+        }
+
+        .description {
+          font-size: 1.2rem;
+        }
+
+        .tagline {
+          font-size: 0.75rem;
+        }
+
+        .divider {
+          width: 8rem;
+        }
+
+        .btn {
+          padding: 1.2rem 2.5rem;
+          font-size: 0.8rem;
+          min-height: 56px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .coming-soon {
+          font-size: 3.5rem;
+        }
+
+        .description {
+          font-size: 1.3rem;
+        }
+
+        .logo {
+          max-width: 500px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .container {
+          padding: 0 4rem;
+        }
+
+        .coming-soon {
+          font-size: 4rem;
+        }
+
+        .description {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading State -->
+    <div class="loading">
+        <img src="zayorra-min.png" alt="Zayorra" class="loading-monogram" loading="eager">
+        Loading...
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <!-- Logo Image -->
+        <div class="logo-container">
+          <!-- <img src="zayorra-min.png" alt="Zayorra" class="logo" /> -->
+          <img src="zayorra.png" alt="Zayorra" class="logo" loading="eager" />
+        </div>
+
+        <!-- Tagline -->
+        <div class="tagline">Authenticity • Exclusivity • Excellence</div>
+
+        <!-- Divider Line -->
+        <div class="divider"></div>
+
+        <!-- Coming Soon Message -->
+        <h2 class="coming-soon">Bringing the World’s Finest Beauty to Bangladesh</h2>
+
+        <p class="description">
+          Zayorra brings authentic, internationally sourced luxury beauty and
+          skincare to Bangladesh, thoughtfully curated for those who value
+          timeless excellence.
+          <br />
+          <em>100% authentic international brands, now in Bangladesh.</em>
+        </p>
+
+        <!-- Contact Links -->
+        <div class="contact-links">
+          <a
+            href="https://facebook.com/zayorra"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <svg class="icon facebook-icon" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+            <span class="btn-text-desktop">Discover Our Collection on Facebook</span>
+            <span class="btn-text-mobile">Shop on Facebook</span>
+          </a>
+
+          <a href="mailto:contact@zayorra.com" class="btn btn-outline">
+            <svg class="icon mail-icon" viewBox="0 0 24 24">
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            contact@zayorra.com
+          </a>
+        </div>
+
+                    <!-- Under Construction Text -->
+            <div class="under-construction">
+                <p>A luxury experience in the making...</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+      // Wait for everything to load before showing content
+      document.addEventListener('DOMContentLoaded', function () {
+        const loading = document.querySelector('.loading');
+        const content = document.querySelector('.content');
+        const logo = document.querySelector('.logo');
+
+        // Function to show content
+        function showContent() {
+          loading.classList.add('hidden');
+          content.classList.add('loaded');
+        }
+
+        // Wait for logo to load
+        if (logo.complete) {
+          // If image is already cached, show content after a short delay
+          setTimeout(showContent, 500);
+        } else {
+          // Wait for image to load
+          logo.addEventListener('load', function () {
+            setTimeout(showContent, 500);
+          });
+
+          // Fallback: if image fails to load, still show content
+          logo.addEventListener('error', function () {
+            setTimeout(showContent, 500);
+          });
+        }
+
+                    // Additional fallback: show content after 3 seconds maximum
+            setTimeout(showContent, 3000);
+        });
+        
+    </script>
+  </body>
+</html>
